@@ -1,4 +1,3 @@
-import time
 from flask import Flask, jsonify
 from flask import request
 from flask import Response
@@ -8,11 +7,6 @@ import datetime
 import json
 import requests
 
-
-from wtforms import StringField, SubmitField
-
-from wtforms.validators import DataRequired
-
 import matplotlib.pyplot as plt
 from statsmodels.tsa.seasonal import seasonal_decompose
 from statsmodels.tsa.deterministic import CalendarFourier, DeterministicProcess
@@ -20,8 +14,6 @@ from statsmodels.tsa.deterministic import CalendarFourier, DeterministicProcess
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf, month_plot, quarter_plot
 
 
-from xgboost import XGBRegressor
-import seaborn as sns
 
 import plotly
 
@@ -38,7 +30,6 @@ import yfinance as yf
 
 import json
 import urllib
-import boto3
 
 
 app = Flask(__name__, static_folder='api/build')
