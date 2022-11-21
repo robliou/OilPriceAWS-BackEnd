@@ -10,3 +10,4 @@ DBnomics==1.2.3
 Flask-Cors==3.0.10
 numpy==1.21.6
 pandas==1.3.5
+pandas_datareader=0.10.0
