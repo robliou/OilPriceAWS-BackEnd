@@ -15,7 +15,6 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
 from statsmodels.tsa.seasonal import seasonal_decompose
 from statsmodels.tsa.deterministic import CalendarFourier, DeterministicProcess
 
