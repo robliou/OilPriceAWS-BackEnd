@@ -1,0 +1,61 @@
+year,region,value
+2022,US tight oil ($100),0
+2023,US tight oil ($100),780
+2024,US tight oil ($100),1560
+2025,US tight oil ($100),2340
+2026,US tight oil ($100),3120
+2027,US tight oil ($100),3900
+2022,Brazil (offshore and ultra-deepwater pre-salt),0
+2023,Brazil (offshore and ultra-deepwater pre-salt),240
+2024,Brazil (offshore and ultra-deepwater pre-salt),480
+2025,Brazil (offshore and ultra-deepwater pre-salt),720
+2026,Brazil (offshore and ultra-deepwater pre-salt),960
+2027,Brazil (offshore and ultra-deepwater pre-salt),1200
+2022,Guyana,0
+2023,Guyana,160
+2024,Guyana,320
+2025,Guyana,480
+2026,Guyana,640
+2027,Guyana,800
+2022,Canada (oil sands),0
+2023,Canada (oil sands),100
+2024,Canada (oil sands),200
+2025,Canada (oil sands),300
+2026,Canada (oil sands),400
+2027,Canada (oil sands),500
+2022,Norway (offshore),0
+2023,Norway (offshore),80
+2024,Norway (offshore),160
+2025,Norway (offshore),240
+2026,Norway (offshore),320
+2027,Norway (offshore),400
+2022,Kazakhstan (Tengiz),0
+2023,Kazakhstan (Tengiz),60
+2024,Kazakhstan (Tengiz),120
+2025,Kazakhstan (Tengiz),180
+2026,Kazakhstan (Tengiz),240
+2027,Kazakhstan (Tengiz),300
+2022,Qatar,0
+2023,Qatar,60
+2024,Qatar,120
+2025,Qatar,180
+2026,Qatar,240
+2027,Qatar,300
+2022,China (offshore),0
+2023,China (offshore),60
+2024,China (offshore),120
+2025,China (offshore),180
+2026,China (offshore),240
+2027,China (offshore),300
+2022,Argentina,0
+2023,Argentina,60
+2024,Argentina,120
+2025,Argentina,180
+2026,Argentina,420
+2027,Argentina,300
+2022,Russia ,0
+2023,Russia ,-140
+2024,Russia ,-280
+2025,Russia ,-420
+2026,Russia ,-560
+2027,Russia ,-700
