@@ -266,7 +266,8 @@ def consumption():
     ], max_nb_series=180) """
 
     df3 = pd.read_csv('./consumption.csv')
-
+    #Last minute change- 500 server error when transition from testing to deployment; 
+    #going to use .csv file until figure out what happened
 
     fig = go.Figure(px.line(df3,  x="period", y="value",
                             title="hello"))
@@ -347,6 +348,8 @@ def production():
 
 
     ], max_nb_series=70) """
+    #Last minute change- 500 server error when transition from testing to deployment; 
+    #going to use .csv file until figure out what happened
 
     df_production = pd.read_csv('./production.csv')
 
