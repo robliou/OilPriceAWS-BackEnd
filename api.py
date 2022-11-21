@@ -8,10 +8,6 @@ import json
 import requests
 
 from statsmodels.tsa.seasonal import seasonal_decompose
-from statsmodels.tsa.deterministic import CalendarFourier, DeterministicProcess
-
-
-
 
 import plotly
 
@@ -265,9 +261,12 @@ def mergedPrices():
 @app.route('/api/consumption', methods=["GET"])
 def consumption():
 
-    df3 = fetch_series([
+    """ df3 = fetch_series([
         'EIA/INTL/53-1-WORL-TBPD.M'
-    ], max_nb_series=180)
+    ], max_nb_series=180) """
+
+    df3 = pd.read_csv('./consumption.csv')
+
 
     fig = go.Figure(px.line(df3,  x="period", y="value",
                             title="hello"))
@@ -343,11 +342,14 @@ def consumption():
 
 @app.route('/api/production', methods=["GET"])
 def production():
-    df_production = fetch_series([
+    """ df_production = fetch_series([
         'EIA/INTL/53-1-WORL-TBPD.A'
 
 
-    ], max_nb_series=70)
+    ], max_nb_series=70) """
+
+    df_production = pd.read_csv('./production.csv')
+
     df_production.head()
 
     df_production = df_production.dropna()
