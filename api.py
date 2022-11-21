@@ -6,7 +6,6 @@ from flask_cors import CORS
 from datetime import date
 import datetime
 import json
-import pandas_datareader.data as web
 import requests
 
 
