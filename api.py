@@ -6,7 +6,6 @@ from flask_cors import CORS
 from datetime import date
 import datetime
 import json
-from sklearn.linear_model import LinearRegression
 import pandas_datareader.data as web
 import requests
 
@@ -16,14 +15,12 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 
 import matplotlib.pyplot as plt
-from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from statsmodels.tsa.seasonal import seasonal_decompose
 from statsmodels.tsa.deterministic import CalendarFourier, DeterministicProcess
 
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf, month_plot, quarter_plot
 
-from sklearn.linear_model import LinearRegression
 
 from xgboost import XGBRegressor
 import seaborn as sns
@@ -60,19 +57,6 @@ def not_found(e):
 def index():
     return app.send_static_file('index.html')
 
-
-""" @app.route('/api/currentPrice', methods=["GET"])
-def getOilPrice():
-    end = datetime.date.today()
-    start = datetime.date.today()
-    df_current_price = web.DataReader('CL=F', 'yahoo',
-                                      start, end)
-
-    currentPrice = json.loads({'data': df_current_price})
-
-    print('this is current price', currentPrice)
-
-    return currentPrice """
 
 
 @app.route('/api/currentPrice', methods=["GET"])
@@ -193,21 +177,16 @@ def getChartFour():
 
     df6['alt_value'] = df6['alt_value'].astype(int)
 
-    print('this is df6', df6)
 
     merged_df = df8.merge(df6, how="right", on="original_period")
 
-    print('this is merged_df.columns()',  list(merged_df.columns))
 
     merged_df.tail()
 
-    print('this is merged_df.columns() after removal',  list(merged_df.columns))
 
     fig = go.Figure(px.line(df6,  x="original_period", y="alt_value", color="agency_forecast",
                             title="hello"))
 
-    # fig.add_trace(go.Line(x=merged_df.original_period,
-    #                      y=merged_df.value, name='EIA', marker=dict(color='rgba(171, 50, 96, 0.6)')))
 
     fig.update_layout(legend=dict(orientation="h",
                                   yanchor="bottom",
@@ -245,10 +224,7 @@ def mergedPrices():
     decomposition = seasonal_decompose(df3['value'],
                                        model='additive',
                                        period=(12))
-    # 252 * 8.6 = 2167
 
-    print('this is seasonality from decompose', decomposition.seasonal)
-    print('this is seasonality from decompose[0]', decomposition.seasonal)
     decomposition.plot()
 
     seasonal_observed = decomposition.observed
@@ -267,7 +243,6 @@ def mergedPrices():
     # https://plotly.github.io/plotly.py-docs/generated/plotly.io.to_json.html
     # This is what/all you need to properly export plots to JS!
 
-    #df_season = df_season.to_json()
     df_resid = pd.DataFrame(
         {'date': seasonal_resid.index, 'values': seasonal_resid.values})
     df_resid['date'] = df_resid['date'].astype(str)
@@ -290,13 +265,10 @@ def mergedPrices():
 
     data_frames = [df_observed, df_trend, df_season, df_resid]
 
-    print('this is df_trend', df_trend)
-    print('this is df_observed', df_observed)
 
     df_merged = df_observed.merge(df_trend, how="left").merge(
         df_season, how="left").merge(df_resid, how="left")
 
-    print('this is df_merged', df_merged)
 
     df_merge = df_merged.to_json()
 
@@ -398,7 +370,6 @@ def production():
     decomposition = seasonal_decompose(df_production['value'],
                                        model='additive',
                                        period=(12))
-    # 252 * 8.6 = 2167
 
     decomposition.plot()
 
