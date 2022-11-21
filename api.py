@@ -7,11 +7,9 @@ import datetime
 import json
 import requests
 
-import matplotlib.pyplot as plt
 from statsmodels.tsa.seasonal import seasonal_decompose
 from statsmodels.tsa.deterministic import CalendarFourier, DeterministicProcess
 
-from statsmodels.graphics.tsaplots import plot_acf, plot_pacf, month_plot, quarter_plot
 
 
 
