@@ -344,6 +344,7 @@ def production():
 
 
     ], max_nb_series=70)
+
     df_production.head()
 
     df_production = df_production.dropna()
@@ -353,6 +354,7 @@ def production():
     decomposition = seasonal_decompose(df_production['value'],
                                        model='additive',
                                        period=(12))
+    # 252 * 8.6 = 2167
 
     decomposition.plot()
 
