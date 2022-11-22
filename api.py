@@ -261,13 +261,9 @@ def mergedPrices():
 @app.route('/api/consumption', methods=["GET"])
 def consumption():
 
-    """ df3 = fetch_series([
+    df3 = fetch_series([
         'EIA/INTL/53-1-WORL-TBPD.M'
-    ], max_nb_series=180) """
-
-    df3 = pd.read_csv('./consumption.csv')
-    #Last minute change- 500 server error when transition from testing to deployment; 
-    #going to use .csv file until figure out what happened
+    ], max_nb_series=180)
 
     fig = go.Figure(px.line(df3,  x="period", y="value",
                             title="hello"))
@@ -343,16 +339,11 @@ def consumption():
 
 @app.route('/api/production', methods=["GET"])
 def production():
-    """ df_production = fetch_series([
+    df_production = fetch_series([
         'EIA/INTL/53-1-WORL-TBPD.A'
 
 
-    ], max_nb_series=70) """
-    #Last minute change- 500 server error when transition from testing to deployment; 
-    #going to use .csv file until figure out what happened
-
-    df_production = pd.read_csv('./production.csv')
-
+    ], max_nb_series=70)
     df_production.head()
 
     df_production = df_production.dropna()
