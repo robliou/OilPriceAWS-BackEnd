@@ -81,6 +81,8 @@ def getHistoricalPrice():
 @app.route('/api/priceForecasts', methods=['GET'])
 def getPriceForecasts():
     df_forecast = pd.read_json("dataPrediction.json")
+    #Note- Due to IP/ privacy concerns as well as time limitations, the proprietary algorithm used to calculcate these forecasts has been removed from this codebase.
+    #However, I am more than happy to share the algorithm or expose it in the codebase if requested.   
 
     df_forecast['period'] = df_forecast['year'].astype(int)
 
